@@ -4,15 +4,14 @@ const CreateNote = ({noteList}) => {
     const [title, setTitle] =useState("");
     const [body, setBody] = useState("");
 
-    const createNote = async()=>{
+    const createNote = ()=>{
 
         const payload ={
             title,
             body
         }
 
-        try {
-            let res = await fetch("https://brave-red-girdle.cyclic.app/notes/create",{
+       fetch("https://brave-red-girdle.cyclic.app/notes/create",{
                 method:"POST",
                 headers:{
                     "Content-type":"application/json",
@@ -22,10 +21,7 @@ const CreateNote = ({noteList}) => {
             });
             // const data = await res.json();
             noteList()
-            
-        } catch (error) {
-            console.log(error)
-        }
+    
     }
    
 
