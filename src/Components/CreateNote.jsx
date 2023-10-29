@@ -20,7 +20,7 @@ const CreateNote = ({noteList}) => {
                 },
                 body:JSON.stringify(payload)
             });
-            const data = await res.json();
+            // const data = await res.json();
             noteList()
             
         } catch (error) {
